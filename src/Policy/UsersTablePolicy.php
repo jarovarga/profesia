@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Policy;
 
-use App\Model\Enum\UserRole;
+use App\src\Model\Enum\UserRole;
 use Authorization\IdentityInterface;
 
 class UsersTablePolicy

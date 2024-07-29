@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Model\Entity\User;
-use App\Model\Table\UsersTable;
+use App\src\Model\Entity\User;
+use App\src\Model\Table\UsersTable;
 use Cake\Datasource\Exception\RecordNotFoundException;
 use Cake\Datasource\ResultSetInterface;
 use Exception;
 use Throwable;
+
+use function App\Controller\__;
 
 /**
  * @property UsersTable $Users

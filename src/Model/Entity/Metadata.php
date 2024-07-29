@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Model\Entity;
+namespace App\src\Model\Entity;
 
 use Cake\I18n\DateTime;
 use Cake\ORM\Entity;

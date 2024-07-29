@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<ruleset name="CakePHP">
+  <rule ref="Generic.Files.LineLength">
+    <properties>
+      <property name="ignoreComments" value="true"/>
+    </properties>
+  </rule>
+  <rule ref="PSR12">
+    <exclude name="PSR2.Classes.PropertyDeclaration.Underscore"/>
+    <exclude name="PSR2.Methods.MethodDeclaration.Underscore"/>
+  </rule>
+  <exclude-pattern>/config/Migrations/*</exclude-pattern>
+  <exclude-pattern>/config/Seeds/*</exclude-pattern>
+</ruleset>

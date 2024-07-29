@@ -1,0 +1,245 @@
+.table {
+  margin: -.5em -1.5em;
+
+  table {
+    border-bottom: .0625em solid #2d3035;
+    border-top: .0625em solid #2d3035;
+    min-width: 100%;
+    table-layout: fixed;
+    white-space: nowrap;
+
+    thead {
+      background: #1d2025;
+
+      tr {
+        th {
+          color: #a5a7a9;
+          font-family: Poppins, sans-serif;
+          font-size: .6875em;
+          font-weight: 400;
+          letter-spacing: .07rem;
+          text-align: left;
+          text-transform: uppercase;
+
+          label {
+            text-align: center;
+
+            input {
+              &[type=checkbox] {
+                display: inline-block;
+                vertical-align: middle;
+              }
+            }
+          }
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          border-right: .0625rem solid #2d3035;
+          border-top: .0625rem solid #2d3035;
+          color: #f0f0f0;
+          font-size: .8125em;
+          padding: .5rem 1.5rem;
+
+          a {
+            color: #f0f0f0;
+          }
+          &:last-child {
+            border-right: 0;
+          }
+        }
+        &[data-ajax-mode] {
+          //color: #a5a7a9;
+          td:not([class*=bulk-action]) {
+            &:hover {
+              //color: #f0f0f0;
+              cursor: pointer;
+            }
+          }
+        }
+        &:nth-child(even) {
+          background: #1d2025;
+        }
+      }
+    }
+  }
+  &__bulk-action {
+    padding: .5rem .75rem !important;
+    width: 1.125rem;
+
+    input {
+      &[type=checkbox] {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+  &__controls {
+    padding: .5em 1.5em;
+  }
+  &__counter {
+    color: #a5a7a9;
+    float: left;
+    font-size: .75em;
+    margin: .1875rem 0;
+  }
+  &__limit-control {
+    color: #a5a7a9;
+    float: left;
+    font-size: .75em;
+
+    .form {
+      label {
+        display: initial;
+        font-size: .75rem;
+
+        &::after {
+          content: "\a0";
+        }
+      }
+      select {
+        background: #1f2227;
+        font-size: .75rem;
+        padding: .1875rem .5rem;
+        width: auto;
+
+        &:focus {
+          border-color: #2d3035;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+  &__paginate {
+    float: right;
+    text-align: center;
+
+    .numbers {
+      -ms-overflow-style: none;
+
+      border-radius: .25rem;
+      border: .0625rem solid #2d3035;
+      font-size: .75em;
+      max-width: 100%;
+      overflow-x: auto;
+      scrollbar-width: none;
+      white-space: nowrap;
+
+      &__item {
+        border-right: .0625rem solid #2d3035;
+        display: inline-block;
+        position: relative;
+        vertical-align: top;
+
+        a {
+          color: #f0f0f0;
+          display: block;
+          padding: .125rem .625rem;
+        }
+        &.--is-active,
+        &.--ellipsis {
+          cursor: default;
+          padding: .125rem .625rem;
+        }
+        &:last-child {
+          border: 0;
+        }
+      }
+    }
+  }
+  &__container {
+    -ms-overflow-style: none;
+
+    clear: both;
+    overflow: auto;
+    padding: .5em 0;
+    scrollbar-width: none;
+  }
+  &__sort {
+    th {
+      padding: .5rem 1.5rem 0;
+
+      a {
+        display: block;
+        float: left;
+        padding: 0 1.25rem 0 0;
+        position: relative;
+
+        &::before {
+          content: "\2191";
+          line-height: 1.25rem;
+          opacity: .5;
+          position: absolute;
+          right: 0;
+        }
+        &::after {
+          content: "\2193";
+          line-height: 1.25rem;
+          opacity: .5;
+          position: absolute;
+          right: .375rem;
+        }
+        &.--desc {
+          &::before {
+            opacity: 1;
+          }
+        }
+        &.--asc {
+          &::after {
+            opacity: 1;
+          }
+        }
+        &:hover {
+          &::before,
+          &::after {
+            color: #a5a7a9;
+          }
+        }
+      }
+    }
+  }
+  &__filter {
+    th {
+      padding: .5rem;
+
+      .form {
+        label {
+          display: none;
+        }
+        input,
+        select {
+          background: #24272c;
+          padding: .5rem 3.125rem .5rem .875rem;
+        }
+        &__reset,
+        &__error-message {
+          top: .0625rem
+        }
+        &__reset {
+          background: #24272c;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 40em) {
+  .table {
+    &__counter {
+      float: none;
+      margin: 0 0 .5rem;
+    }
+    &__paginate {
+      display: inline-block;
+      float: none;
+      margin: 0 !important;
+      vertical-align: top;
+    }
+    &__limit-control {
+      float: none;
+      margin: 0 0 .5rem;
+    }
+  }
+}

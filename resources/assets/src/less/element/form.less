@@ -1,0 +1,166 @@
+label {
+  color: #a5a7a9;
+  display: block;
+  font-size: .8125rem;
+}
+input,
+select,
+textarea {
+  background: #24272c;
+  border-radius: .25rem;
+  border: .0625rem solid #2d3035;
+  color: #f0f0f0;
+  font-size: .75rem;
+  letter-spacing: .02rem;
+  font-family: Muli, sans-serif;
+  line-height: 1.25rem;
+  padding: .5rem .875rem;
+  width: 100%;
+
+  &:-moz-ui-invalid {
+    box-shadow: none;
+  }
+  &:focus {
+    border-color: #1f2227;
+    box-shadow: 0 0 0 .2em rgba(165, 167, 169, .25);
+  }
+  &:disabled {
+    background: #2d3035;
+  }
+}
+input {
+  text-overflow: ellipsis;
+
+  &::placeholder {
+    color: #929496;
+    opacity: 1;
+  }
+  &:focus {
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+  &[type=date]:invalid {
+    color: #929496;
+  }
+  &[type=checkbox] {
+    background: 0;
+    cursor: pointer;
+    height: 1.125rem;
+    padding: 0;
+    position: relative;
+    text-overflow: initial;
+    width: 1.125rem;
+
+    &:focus {
+      border-color: #2d3035;
+      box-shadow: none;
+    }
+    &:checked::before {
+      background: #9e6cfd;
+      color: #f0f0f0;
+      content: "\ec34";
+      display: block;
+      font: .75em Linearicons, sans-serif;
+      height: 1rem;
+      line-height: 1rem;
+      position: absolute;
+      text-align: center;
+      width: 1rem;
+    }
+  }
+}
+select {
+  cursor: pointer;
+  text-indent: initial;
+
+  option {
+    color: #f0f0f0;
+  }
+  &:focus {
+    &:invalid {
+      color: transparent;
+    }
+  }
+  &:invalid {
+    color: #929496;
+  }
+}
+.form {
+  overflow: visible;
+
+  * {
+    box-sizing: border-box;
+    overflow: visible;
+  }
+  label {
+    margin: 0 0 .25rem;
+  }
+  &__input {
+    position: relative;
+
+    &.--date {
+      input::-webkit-calendar-picker-indicator {
+        opacity: 0;
+      }
+    }
+    &.--submit {
+      margin: 0;
+      padding: .5em 0 0;
+
+      input {
+        background: #9e6cfd;
+        border: 0;
+        cursor: pointer;
+        display: block;
+        font-family: Poppins, sans-serif;
+        font-size: .75em;
+        width: auto;
+
+        &:focus {
+          border: 0;
+          box-shadow: none;
+
+          &::placeholder {
+            opacity: 0;
+          }
+        }
+        &:hover {
+
+        }
+      }
+    }
+  }
+  &__reset,
+  &__error-message {
+    background: #24272c;
+    border-radius: 0 .25rem .25rem 0;
+    color: #929496;
+    display: block;
+    font-size: .875rem;
+    height: 2.25rem;
+    line-height: 2.25rem;
+    position: absolute;
+    right: .0625rem;
+    text-align: center;
+    top: 1.8rem;
+    width: 2.25rem;
+
+    &::before {
+      font-family: Linearicons;
+    }
+    &:hover {
+      color: #929496;
+    }
+  }
+  &__reset {
+    &::before {
+      content: "\ec5a";
+    }
+  }
+  &__error-message {
+    &::before {
+      content: "\ec55";
+    }
+  }
+}

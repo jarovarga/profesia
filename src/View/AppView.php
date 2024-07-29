@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace App\View;
 
-use App\View\Helper\MenuHelper;
+use App\src\View\Helper\MenuHelper;
 use Authentication\View\Helper\IdentityHelper;
 use Cake\Core\Configure;
 use Cake\Event\EventManager;
 use Cake\View\View;
+
+use function App\View\__x;
 
 /**
  * @property MenuHelper $Menu

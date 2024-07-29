@@ -8,6 +8,8 @@ use Cake\Event\EventInterface;
 use Cake\Http\Response;
 use Exception;
 
+use function App\Controller\__d;
+
 class AuthController extends AppController
 {
     /**

@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace App\Model\Enum;
 
-use App\Model\Traits\EnumOptionsTrait;
+use App\src\Model\Traits\EnumOptionsTrait;
 use Cake\Database\Type\EnumLabelInterface;
 use Cake\Utility\Inflector;
+
+use function App\Model\Enum\__x;
 
 enum UserRole: string implements EnumLabelInterface
 {
